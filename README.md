@@ -1,15 +1,15 @@
 Embedded Jasper Reports Examples
 =============
 
-Some examples:
+### Some examples:
 
-- [Simple](/home/achmad/repo/examples/jasper-samples/src/main/java/com/bchetty/reporting/jasper/main/SimpleReporter.java)
+- [Simple](src/main/java/com/bchetty/reporting/jasper/main/SimpleReporter.java)
 
 - [Content from database](src/main/java/com/bchetty/reporting/jasper/main/DatabaseReporter.java)
 
-- [Gant chart](/home/achmad/repo/examples/jasper-samples/src/main/java/com/bchetty/reporting/jasper/main/GanttReporter.java)
+- [Gant chart](src/main/java/com/bchetty/reporting/jasper/main/GanttReporter.java)
 
-- [Thermometer](/home/achmad/repo/examples/jasper-samples/src/main/java/com/bchetty/reporting/jasper/main/ThermoReporter.java)
+- [Thermometer](src/main/java/com/bchetty/reporting/jasper/main/ThermoReporter.java)
 
 ### References
 
