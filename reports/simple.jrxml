@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="simple_report" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="30" bottomMargin="30" whenResourceMissingType="Empty">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="simple_report" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="30" bottomMargin="30" whenResourceMissingType="Empty" uuid="3e37a90d-56e8-453e-ba3d-51331a7a054c">
 	<property name="com.jasperassistant.designer.Grid" value="false"/>
 	<property name="com.jasperassistant.designer.SnapToGrid" value="false"/>
 	<property name="com.jasperassistant.designer.GridWidth" value="12"/>
@@ -27,34 +27,33 @@
 		<groupHeader>
 			<band height="23">
 				<staticText>
-					<reportElement mode="Opaque" x="0" y="5" width="535" height="15" backcolor="#70A9A9"/>
+					<reportElement mode="Opaque" x="0" y="5" width="535" height="15" backcolor="#70A9A9" uuid="d4b32c90-218d-43c7-8d6a-f686b0fbdc1c"/>
 					<box>
 						<bottomPen lineWidth="1.0" lineColor="#CCCCCC"/>
 					</box>
-					<textElement/>
 					<text><![CDATA[]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="136" y="5" width="150" height="15"/>
+					<reportElement x="136" y="5" width="150" height="15" uuid="69f1f5d2-787a-499d-bee9-bafe679550a5"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font isBold="true"/>
 					</textElement>
 					<text><![CDATA[Occupation]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="286" y="5" width="128" height="15"/>
+					<reportElement x="286" y="5" width="128" height="15" uuid="e501e515-18be-4e7a-9777-b38d21b3b68c"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
 					<text><![CDATA[Place]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="414" y="5" width="121" height="15"/>
+					<reportElement x="414" y="5" width="121" height="15" uuid="2a3a847a-b2a3-48c2-9c5c-d3b5ea542176"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font isBold="true"/>
 					</textElement>
 					<text><![CDATA[Country]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="0" y="5" width="136" height="15"/>
+					<reportElement x="0" y="5" width="136" height="15" uuid="4337c763-5040-4ad9-8223-1c3e34ea5124"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font isBold="true"/>
 					</textElement>
@@ -66,33 +65,32 @@
 	<detail>
 		<band height="16">
 			<staticText>
-				<reportElement mode="Opaque" x="0" y="0" width="535" height="14" backcolor="#E5ECF9"/>
+				<reportElement mode="Opaque" x="0" y="0" width="535" height="14" backcolor="#E5ECF9" uuid="8f643174-c7eb-4eb2-9934-4363b3a6b17a"/>
 				<box>
-					<bottomPen lineWidth="0.25" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.25" lineColor="#CCCDDD"/>
 				</box>
-				<textElement/>
 				<text><![CDATA[]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="136" y="0" width="150" height="15"/>
+				<reportElement x="136" y="0" width="150" height="15" uuid="f1bb29df-f713-4be3-bee3-7c7073be2727"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{occupation}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="286" y="0" width="128" height="15"/>
+				<reportElement x="286" y="0" width="128" height="15" uuid="f94612f9-b6d2-478d-8364-e74ceb5c2d39"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{place}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="414" y="0" width="121" height="15"/>
+				<reportElement x="414" y="0" width="121" height="15" uuid="9f8d1758-1c22-43ca-89d1-0d7bb1293a0b"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{country}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="0" width="136" height="15"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<reportElement mode="Opaque" x="0" y="0" width="136" height="15" forecolor="#636300" backcolor="#DEDE6F" uuid="b0df3cf9-3976-4086-8a0f-43f3ac23b8f9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
 			</textField>
 		</band>

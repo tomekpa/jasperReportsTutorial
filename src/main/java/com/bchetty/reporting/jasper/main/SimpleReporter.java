@@ -16,30 +16,25 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 
-/**
- * Simple Report Generator.
- * 
- * @author Babji Prashanth, Chetty
- */
 public class SimpleReporter {
-    /**
-     * 
-     * @param args
-     * @throws Exception 
-     */
-    @SuppressWarnings("unchecked")
+
     public static void main(String[] args) throws Exception {
+
+        //COMPILED JASPER REPORTS
         InputStream inputStream = new FileInputStream("reports/simple.jrxml");
-
-        SimpleBeanMaker simpleBeanMaker = new SimpleBeanMaker();
-        ArrayList<SimpleBean> simpleBeanList = simpleBeanMaker.getDataBeanList();
-        JRBeanCollectionDataSource beanColDataSource = new JRBeanCollectionDataSource(simpleBeanList);
-
-        Map parameters = new HashMap();
-
         JasperDesign jasperDesign = JRXmlLoader.load(inputStream);
         JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
+
+        //DATA COLLECTION
+        SimpleBeanMaker simpleBeanMaker = new SimpleBeanMaker();
+        ArrayList<SimpleBean> simpleBeanList = simpleBeanMaker.getMyDataBeanList();
+        JRBeanCollectionDataSource beanColDataSource = new JRBeanCollectionDataSource(simpleBeanList);
+
+        //CREATE REPORT
+        Map parameters = new HashMap();
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, beanColDataSource);
+
+
         JasperExportManager.exportReportToPdfFile(jasperPrint, "reports/simple.pdf");
     }
 }
