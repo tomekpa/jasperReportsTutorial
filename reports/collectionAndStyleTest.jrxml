@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="helloWorldTemplate" pageWidth="612" pageHeight="1008" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="877b2bbf-8f0c-465d-8f07-8476068a1334">
+	<property name="ireport.zoom" value="2.3579476910000023"/>
+	<property name="ireport.x" value="23"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="MY_LP" class="java.lang.String"/>
+	<parameter name="MY_HEADER_NAME" class="java.lang.String"/>
+	<parameter name="MY_HEADER_COUNTRY" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="JR_country" class="java.lang.String">
+		<fieldDescription><![CDATA[country]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String"/>
+	<field name="counter" class="java.lang.Integer"/>
+	<sortField name="counter"/>
+	<sortField name="JR_country"/>
+	<sortField name="name"/>
+	<variable name="countNumber" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[Boolean.TRUE]]></variableExpression>
+	</variable>
+	<variable name="counterSum" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{counter}]]></variableExpression>
+	</variable>
+	<columnHeader>
+		<band height="30">
+			<elementGroup>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="3" width="32" height="15" backcolor="#70A9A9" uuid="e767a4cf-1cc7-4ee1-ae10-a651891eedde"/>
+					<text><![CDATA[Lp. ]]></text>
+				</staticText>
+				<textField>
+					<reportElement mode="Opaque" x="162" y="3" width="205" height="15" backcolor="#70A9A9" uuid="a2055e17-11ab-4e38-8d99-d971823c8f44"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{MY_HEADER_NAME}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Opaque" x="32" y="3" width="130" height="15" backcolor="#70A9A9" uuid="eb30db8a-78c8-4d51-8d14-d982aee92a94"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{MY_HEADER_COUNTRY}]]></textFieldExpression>
+				</textField>
+                <staticText>
+                    <reportElement mode="Opaque" x="367" y="3" width="188" height="15" backcolor="#70A9A9" uuid="4a9bc01f-45e8-4c55-ac30-8781f46d6fc9"/>
+                    <textElement textAlignment="Center" verticalAlignment="Middle">
+                        <font isBold="true"/>
+                    </textElement>
+                    <text><![CDATA[Counter]]></text>
+                </staticText>
+			</elementGroup>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23">
+			<elementGroup>
+                <textField>
+                    <reportElement mode="Opaque" x="0" y="1" width="32" height="15" backcolor="#E5ECF9" uuid="22cc21f6-2562-45a7-a813-a8ee89dee141"/>
+                    <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                    <textFieldExpression><![CDATA[$V{countNumber}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement mode="Opaque" x="32" y="1" width="130" height="15" backcolor="#E5ECF9" uuid="0fce98cb-fa53-45c1-bc22-0c48c2721780"/>
+                    <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                    <textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement mode="Opaque" x="162" y="1" width="205" height="15" backcolor="#E5ECF9" uuid="89133fbf-0d1d-4919-bf66-8b581a93d723"/>
+                    <textElement textAlignment="Center" verticalAlignment="Middle">
+                        <font size="9"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{JR_country}.isEmpty() ? "NO COUNTRY" : $F{JR_country}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement mode="Opaque" x="367" y="1" width="188" height="15" backcolor="#E5ECF9" uuid="7b8bf71d-8217-4613-8dcc-8f8887b1d315"/>
+                    <textElement textAlignment="Center" verticalAlignment="Middle">
+                        <font size="9"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{counter}]]></textFieldExpression>
+                </textField>
+			</elementGroup>
+		</band>
+	</detail>
+	<summary>
+		<band height="20">
+			<textField>
+				<reportElement x="367" y="0" width="188" height="20" uuid="40fc7bbd-c360-42a7-b2d5-3805b2aeb104"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["TOTAL: " + $V{counterSum} + " in all countries"]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

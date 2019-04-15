@@ -2,7 +2,11 @@ package com.bchetty.reporting.jasper.main;
 
 import com.bchetty.reporting.jasper.business.HelloWorldBeanMaker;
 import com.bchetty.reporting.jasper.data.HelloWorldBean;
-import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
@@ -13,7 +17,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class HelloWorldTemplate {
+public class CollectionTestReport {
 
     //1 JR-XML File
     //2 JR-Xml-Loader - parse JR-XML file to Jasper Design
@@ -23,7 +27,7 @@ public class HelloWorldTemplate {
     public static void main(String[] args) throws Exception {
 
         // ADD 1 - InputStream - JR Template file
-        InputStream inputStream = new FileInputStream("reports/helloWorldTemplate.jrxml");
+        InputStream inputStream = new FileInputStream("reports/collectionAndStyleTest.jrxml");
 
         // ADD 2 - JasperDesign - JR Template file load
         JasperDesign jasperDesign = JRXmlLoader.load(inputStream);
@@ -42,7 +46,7 @@ public class HelloWorldTemplate {
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, beanColDataSource);
 
         //ADD 5 - JasperExportManager - JasperPrint to PDF
-        JasperExportManager.exportReportToPdfFile(jasperPrint, "reports/helloWorldTemplate2.pdf");
+        JasperExportManager.exportReportToPdfFile(jasperPrint, "reports/collectionAndStyleTest.pdf");
 //        JasperExportManager.exportReportToHtmlFile(jasperPrint, "reports/helloWorldTemplate.html");
     }
 }
