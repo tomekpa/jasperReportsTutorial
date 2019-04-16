@@ -9,7 +9,8 @@ public class BarcodeBeanMaker {
 
     public ArrayList<HelloWorldBean> getDataBeanList() {
         ArrayList<HelloWorldBean> dataBeanList = new ArrayList<>();
-        dataBeanList.add(produce("Babji, Chetty1", "Germany", 5));
+        dataBeanList.add(produce("12134", "12340", 5));
+//        dataBeanList.add(produce("121345", "12340n", 5)); //Caused by: net.sourceforge.barbecue.BarcodeException: n is not a valid character for Standard 2 of 5 encoding
         return dataBeanList;
     }
 

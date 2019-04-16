@@ -18,6 +18,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+
+//https://stackoverflow.com/questions/34759249/barcode-creation-in-jasper-report-n-is-not-a-valid-character-for-standard-2-of
+
 public class BarcodeHello {
 
     //1 JR-XML File
